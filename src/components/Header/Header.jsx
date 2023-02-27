@@ -2,7 +2,7 @@ import ContainerStyled from "../../styledComponents/Container";
 import HeaderStyled from "../../styledComponents/Header/Index";
 import logo from "../../img/logo.svg";
 import NavStyled from "../../styledComponents/Header/Nav";
-import Flex from "../../styledComponents/Other/Flex";
+import Flex from "../../styledComponents/Flex";
 import NavLinkStyled from "../../styledComponents/Header/Link";
 import Popup from "../../styledComponents/Popup";
 import { useState } from "react";
