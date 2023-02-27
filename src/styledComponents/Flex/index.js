@@ -12,7 +12,13 @@ const Flex = styled.div`
     }};
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: ${({g}) => {
+        return g ? g : 40
+    }}px;
+    flex-wrap: wrap;
+    padding: ${({p}) => {
+        return p ? p : 0
+    }}px;
 `
 
 export default Flex
