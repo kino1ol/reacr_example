@@ -4,9 +4,11 @@ import {
 	Route,
 	RouterProvider,
 } from "react-router-dom";
+import getProduct from "./actions/getProduct";
 import getProducts from "./actions/getProducts";
 import "./App.css";
 import Layout from "./components/Layout";
+import ProductCard from "./pages/Products/ProductCard/ProductCard";
 import Products from "./pages/Products/Products.jsx";
 
 const router = createBrowserRouter(
@@ -19,7 +21,7 @@ const router = createBrowserRouter(
 					element={<Products />}
 					loader={getProducts}
 				/>
-				{/* <Route path=":id" element={} /> */}
+				<Route path=":id" element={<ProductCard />} loader={getProduct}/>
 			</Route>
 		</Route>
 	)
