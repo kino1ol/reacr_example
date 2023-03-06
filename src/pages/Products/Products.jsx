@@ -4,12 +4,13 @@ import ContainerStyled from "../../styledComponents/Container";
 import Flex from "../../styledComponents/Flex";
 
 export default function Products() {
-    const products = useLoaderData();
+    const data = useLoaderData()
+
     return (
         <section>
-            <ContainerStyled>
+            <ContainerStyled pb={60}>
                 <Flex>
-                    {products.map((product, i) => <Product product={product} />)}
+                    {data.map((product, i) => <Product product={product} key={`${product.title}-${i}`} />)}
                 </Flex>
             </ContainerStyled>
         </section>
