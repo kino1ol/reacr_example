@@ -11,8 +11,15 @@ const Flex = styled.div`
         }
     }};
     align-items: center;
-    justify-content: center;
-    gap: 40px;
+    justify-content: ${({jc}) => jc ? jc : 'center'};
+    gap: ${({g}) => {
+        return g ? g : 40
+    }}px;
+    flex-wrap: wrap;
+    padding: ${({p}) => {
+        return p ? p : 0
+    }}px;
+    min-height: ${({minH}) => minH ? minH : 'auto'};
 `
 
 export default Flex
