@@ -3,6 +3,7 @@ import styled from 'styled-components'
 const ContainerStyled = styled.div`
     max-width: 1200px;
     margin: 0 auto;
+    padding-bottom: ${({pb}) => `${pb}px`};
     @media (max-width: 1200px) {
         max-width: 885px;
     }
