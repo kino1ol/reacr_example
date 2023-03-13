@@ -6,6 +6,7 @@ import Flex from "../../styledComponents/Flex";
 import NavLinkStyled from "../../styledComponents/Header/Link";
 import Cart from "../Cart";
 import { NavLink } from 'react-router-dom';
+import Auth from "../Authorization";
 
 export default function Header() {
 	return (
@@ -19,7 +20,10 @@ export default function Header() {
 						<NavLinkStyled to="/products">Продукты</NavLinkStyled>
 						<NavLinkStyled to="/contacts">Контакты</NavLinkStyled>
 					</NavStyled>
+					<Flex g={10}>
+					<Auth />
 					<Cart />
+					</Flex>
 				</Flex>
 			</ContainerStyled>
 		</HeaderStyled>

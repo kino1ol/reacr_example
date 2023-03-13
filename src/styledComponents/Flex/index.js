@@ -20,6 +20,7 @@ const Flex = styled.div`
         return p ? p : 0
     }}px;
     min-height: ${({minH}) => minH ? minH : 'auto'};
+    max-width: ${({maxW}) => maxW ? maxW + 'px' : 'auto'};
 `
 
 export default Flex
