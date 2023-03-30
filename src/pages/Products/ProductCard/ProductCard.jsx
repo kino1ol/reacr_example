@@ -1,13 +1,18 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { useContext } from "react";
+import { useDispatch } from "react-redux";
 import { useLoaderData, useParams } from "react-router-dom";
+import { add } from "../../../actions/reducer/cart";
+
 import { DispatchContext } from "../../../context";
 import ButtonStyled from "../../../styledComponents/Button";
 import ContainerStyled from "../../../styledComponents/Container";
 import Image from "../../../styledComponents/Image";
 
 export default function ProductCard() {
+    const dispatch = useDispatch()
+
 	const { id } = useParams();
 	const product = useLoaderData(id);
 	const { creationAt, description, images, price, title, updatedAt } =
@@ -21,7 +26,7 @@ export default function ProductCard() {
         isComplete && setTimeout(() => setComplete(false), 3000)
     }, [isComplete])
 
-	const dispatch = useContext(DispatchContext);
+	// const dispatch = useContext(DispatchContext);
 	return (
 		<article>
 			<ContainerStyled>
@@ -60,10 +65,7 @@ export default function ProductCard() {
             setError(true)
         } else {
             setError(false)
-            dispatch({ type: "add", payload: {
-                ...product,
-                 count
-            } })
+            dispatch(add({...product, count}))
             setComplete(true)
         }
     }

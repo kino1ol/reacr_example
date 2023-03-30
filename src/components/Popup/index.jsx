@@ -1,21 +1,25 @@
-import ButtonStyled from "../../styledComponents/Button";
-import PopupStyled from "../../styledComponents/Popup";
+import { PopupStyled, CrossImg } from "../../styledComponents/Popup";
+import cross from "../../img/close.png";
 
 export default function Popup({ isOpen, setOpen, children }) {
-	return (
-		<div>
-			{isOpen && (
-				<PopupStyled>
-					<ButtonStyled onClick={close} type="button" w={80}>
-						Закрыть
-					</ButtonStyled>
-                    {children}
-				</PopupStyled>
-			)}
-		</div>
-	);
+  return (
+    <div>
+      {isOpen && (
+        <PopupStyled>
+          <CrossImg
+            onClick={close}
+            src={cross}
+            alt="close"
+            width={25}
+            height={25}
+          />
+          {children}
+        </PopupStyled>
+      )}
+    </div>
+  );
 
-    function close() {
-        setOpen(false)
-    }
+  function close() {
+    setOpen(false);
+  }
 }
